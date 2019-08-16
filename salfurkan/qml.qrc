@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Reader.qml</file>
+        <file>List.qml</file>
+        <file>L12.qml</file>
+        <file>Wrl.qml</file>
+        <file>Settings.qml</file>
+        <file>Start.qml</file>
+    </qresource>
+</RCC>
