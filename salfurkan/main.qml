@@ -5,16 +5,19 @@ import QtQuick.Controls.Material 2.12
 
 ApplicationWindow {
     id: applicationWindow
+
     property alias app_toolbar: app_toolbar
     property alias applicationWindow: applicationWindow
     property alias reader: reader
     property alias wrl: wrl
-    property alias settings: settings
     property alias list: list
+    property alias resim2: resim2
+
     title: qsTr("ŞAL Karekod")
     visible: true
     width: 480
     height: 640
+
     Start {
            id: start
 
@@ -41,7 +44,7 @@ ApplicationWindow {
 
             Image {
                 id: back_tool
-                source: "qrc:/media/media/back.cur"
+                source: "qrc:/media/media/back.png"
                 anchors.fill: parent
             }
 
@@ -56,9 +59,11 @@ ApplicationWindow {
                     wrl.wrl_page.visible = false
                     list.list_page.visible = true
                 }
-                if (settings.setting_page.visible ==true ) {
-                    settings.setting_page.visible = false
+                if (resim2.agac2.visible == true ) {
+                    resim2.agac2.visible = false
+                    wrl.wrl_page.visible = true
                 }
+
             }
 
         }
@@ -69,24 +74,14 @@ ApplicationWindow {
             anchors.right :parent.right
             Image {
                 id: close_tool
-                source: "qrc:/media/media/close.cur"
+                source: "qrc:/media/media/close.png"
                 anchors.fill: parent
             }
             onClicked: {
                 Qt.quit()
             }
         }
-        ToolButton {
-            anchors.right: toolb1.left
-            Image {
-                id: settting_tool
-                source: "qrc:/media/media/setting.png"
-                anchors.fill: parent
-            }
-            onClicked:  {
-                settings.setting_page.visible = true
-            }
-        }
+
     }
 
     Button {
@@ -102,6 +97,7 @@ ApplicationWindow {
         onClicked : {
 
             reader.a.visible = true
+
 
         }
     }
@@ -124,6 +120,7 @@ ApplicationWindow {
             list.list_page.visible = true
         }
     }
+
     Reader {
         id: reader
 
@@ -133,10 +130,9 @@ ApplicationWindow {
     }
     Wrl {
         id: wrl
-
     }
-    Settings {
-        id: settings
+    Resim2 {
+        id: resim2
     }
 
 }
