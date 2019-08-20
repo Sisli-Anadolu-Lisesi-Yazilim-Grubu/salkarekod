@@ -27,7 +27,6 @@ Rectangle {
             width: 146
             height: 60
             text: "Belirsiz"
-            fontSizeMode: fontB
         }
         MouseArea {
             anchors.fill: parent
