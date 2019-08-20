@@ -5,8 +5,7 @@ import QtQuick.Controls 1.2
 
 Page {
     id: page
-    width: 480
-    height: 640
+
     property alias page: page
     anchors.fill: parent
 
@@ -15,14 +14,14 @@ Page {
         anchors.centerIn: parent
         source: "qrc:/media/media/sal-logo.png"
         width: parent.width / 1.25
-        height: parent.height / 2
+        height: parent.height / 1.7
     }
 
     footer: StatusBar {
         RowLayout {
             Label {
-                text: qsTr("v1.0 Beta")
-                font.pixelSize: 15
+                text: qsTr("Sürüm 1.0 Beta")
+                font.pixelSize: 20
             }
         }
     }
