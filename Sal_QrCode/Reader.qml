@@ -3,7 +3,7 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.12
 import QtMultimedia 5.13
-
+import QZXing 2.3
 Page {
     id:a
     visible: false
@@ -21,8 +21,16 @@ Page {
        }
     VideoOutput {
         id: videoOutput
-            source: camera
-            anchors.fill: parent
-            focus : visible
+        source: camera
+        anchors.fill: parent
+        filters: [ zxingFilter ]
+    }
+    QZXingFilter {
+        id: zxingFilter
+        decoder {
+            onTagFound: {
+                console.log(tag);
+            }
+        }
     }
 }
