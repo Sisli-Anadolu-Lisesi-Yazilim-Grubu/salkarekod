@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Reader.qml</file>
+        <file>List.qml</file>
+        <file>L12.qml</file>
+        <file>Wrl.qml</file>
+        <file>Start.qml</file>
+        <file>Resim.qml</file>
+        <file>Yazi.qml</file>
+        <file>Resim2.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/media">
+        <file>agac_resim/indir.jpg</file>
+        <file>icon_resim/back.png</file>
+        <file>icon_resim/close.png</file>
+        <file>icon_resim/pause.png</file>
+        <file>icon_resim/play.png</file>
+        <file>icon_resim/sal-logo.png</file>
+        <file>ses_kayit/a1.mp3</file>
+    </qresource>
+</RCC>
