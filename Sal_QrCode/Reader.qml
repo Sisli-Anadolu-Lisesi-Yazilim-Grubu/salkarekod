@@ -1,7 +1,5 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.3
-import QtQuick.Layouts 1.3
-import QtQuick.Controls.Material 2.12
 import QtMultimedia 5.13
 import QZXing 2.3
 Page {
@@ -17,6 +15,10 @@ Page {
     anchors.left: parent.left
     Camera {
            id: camera
+           focus {
+                   focusMode: CameraFocus.FocusContinuous
+                   focusPointMode: CameraFocus.FocusPointAuto
+               }
 
        }
     VideoOutput {
@@ -27,10 +29,19 @@ Page {
     }
     QZXingFilter {
         id: zxingFilter
+
         decoder {
+            enabledDecoders: QZXing.DecoderFormat_EAN_13 | QZXing.DecoderFormat_CODE_39 | QZXing.DecoderFormat_QR_CODE
             onTagFound: {
                 console.log(tag);
             }
         }
+        captureRect: {
+
+               videoOutput.contentRect;
+               videoOutput.sourceRect;
+               return videoOutput.mapRectToSource(videoOutput.mapNormalizedRectToItem(Qt.rect(0.25, 0.25, 0.5, 0.5)));
+        }
     }
+
 }
