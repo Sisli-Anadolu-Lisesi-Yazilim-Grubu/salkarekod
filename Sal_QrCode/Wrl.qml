@@ -1,6 +1,5 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
-import QtQuick.Layouts 1.3
 import QtMultimedia 5.13
 
 Page {
@@ -44,14 +43,25 @@ Page {
         }
     }
 
-    ProgressBar {
+    ProgressBar  {
 
          id: progressBar
          anchors.horizontalCenter:  parent.horizontalCenter
          y: ( name.y +name.height ) * 1.05
          width: tbutton.width
          value:playMusic.position/playMusic.duration
+         visible: false
 
+    }
+    Slider {
+        anchors.horizontalCenter:  parent.horizontalCenter
+        y: ( name.y +name.height )
+        width: tbutton.width
+        value:progressBar.value
+        visible: true
+        onValueChanged: {
+            playMusic.seek(value * playMusic.duration )
+        }
     }
 
     MouseArea {
@@ -77,18 +87,21 @@ Page {
                 deg=1
                 play_png.visible = false
                 pause_png.visible = true
+
             }
             else if (deg == 1) {
                 playMusic.pause()
                 deg=2
                 play_png.visible = true
                 pause_png.visible = false
+
             }
             else if (deg == 2) {
                 playMusic.play()
                 deg = 1
                 play_png.visible = false
                 pause_png.visible = true
+
             }
         }
 
@@ -122,9 +135,4 @@ Page {
         }
 
     }
-
-
-
-
-
 }
