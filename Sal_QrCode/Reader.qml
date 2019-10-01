@@ -40,7 +40,7 @@ Page {
 
                videoOutput.contentRect;
                videoOutput.sourceRect;
-               return videoOutput.mapRectToSource(videoOutput.mapNormalizedRectToItem(Qt.rect(0.25, 0.25, 0.5, 0.5)));
+               return videoOutput.mapRectToSource(videoOutput.mapNormalizedRectToItem(Qt.rect(0, 0, 1, 1)));
         }
     }
 
